@@ -70,5 +70,9 @@ class SecondViewController: UIViewController, UITextFieldDelegate {
     func getGender(index:Int) -> String {
         return index == 0 ? "高富帅" : index == 1 ? "白富美" : "人妖"
     }
+    
+    func hehe() {
+        
+    }
 }
 

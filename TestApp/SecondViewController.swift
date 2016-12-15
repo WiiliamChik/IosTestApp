@@ -74,5 +74,9 @@ class SecondViewController: UIViewController, UITextFieldDelegate {
     func hehe() {
         
     }
+    
+    func haha() {
+        
+    }
 }
 

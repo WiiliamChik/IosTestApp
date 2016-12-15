@@ -49,6 +49,7 @@
 		03221B181DF5968400213BAA /* TestAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		03221B1C1DF5968400213BAA /* TestAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestAppUITests.swift; sourceTree = "<group>"; };
 		03221B1E1DF5968400213BAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		03EC50841DF9204300AF4992 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,8 +100,10 @@
 		03221AF91DF5968400213BAA /* TestApp */ = {
 			isa = PBXGroup;
 			children = (
+				0331D56F1E00FBB8004CD1A8 /* UI */,
 				03221AFA1DF5968400213BAA /* AppDelegate.swift */,
 				03221AFC1DF5968400213BAA /* FirstViewController.swift */,
+				03EC50841DF9204300AF4992 /* MyPlayground.playground */,
 				03221AFE1DF5968400213BAA /* SecondViewController.swift */,
 				03221B001DF5968400213BAA /* Main.storyboard */,
 				03221B031DF5968400213BAA /* Assets.xcassets */,
@@ -126,6 +129,13 @@
 				03221B1E1DF5968400213BAA /* Info.plist */,
 			);
 			path = TestAppUITests;
+			sourceTree = "<group>";
+		};
+		0331D56F1E00FBB8004CD1A8 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = UI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -516,6 +526,7 @@
 				03221B231DF5968400213BAA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		03221B241DF5968400213BAA /* Build configuration list for PBXNativeTarget "TestAppTests" */ = {
 			isa = XCConfigurationList;
@@ -524,6 +535,7 @@
 				03221B261DF5968400213BAA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		03221B271DF5968400213BAA /* Build configuration list for PBXNativeTarget "TestAppUITests" */ = {
 			isa = XCConfigurationList;
@@ -532,6 +544,7 @@
 				03221B291DF5968400213BAA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

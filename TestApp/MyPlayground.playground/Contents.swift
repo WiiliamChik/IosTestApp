@@ -288,3 +288,112 @@ var apple1 = apple as! Fruit
 if var fruit2 = fruit as? Fruit {
     print("do something with fruit")
 }
+
+// // ****** 闭包函数 ******
+var usernames = ["Cc", "Lves", "Lecoding", "Wildcat"]
+
+func backWards(s1: String, s2: String) -> Bool {
+    return s1 > s2
+}
+
+// 标准模式
+usernames.sort(by: { (s1: String, s2: String) -> Bool in
+    return s1 < s2
+})
+
+// 注意，函数的最后一个参数是闭包时 () 可以省略
+usernames.sort{ (s1: String, s2: String) -> Bool in
+    return s1 < s2
+}
+
+// 根据上下文推断类型，因为所有的类型都可以被正确推断，返回箭头（->）和围绕在参数周围的括号也可以被省略：
+usernames.sort { s1, s2 in
+    return s1 < s2
+}
+
+// 单行表达式闭包可以通过省略return关键字来隐式返回单行表达式的结果
+usernames.sort { s1, s2 in s1 < s2 }
+
+// 内联闭包可以省略参数名直接用参数顺序$0，$1，$2调用
+usernames.sort { $0 < $1 }
+
+usernames.sort(by: >)
+
+usernames.sort(by: backWards)
+
+// 尾随闭包（Trailing Closures），尾随闭包是一个书写在函数括号之后的闭包表达式，函数支持将其作为最后一个参数调用
+func caculateTwoNums(num1: Int, num2: Int, Closure:(Int, Int) -> Int) -> Int {
+    return Closure(num1, num2)
+}
+
+// 内联闭包形式，不使用尾随闭包，求和
+var numberResult = caculateTwoNums(num1: 2, num2: 4, Closure: {(num1: Int, num2: Int) -> Int in
+    return num1 + num2
+})
+
+//使用尾随闭包,求乘机
+var numReult2 = caculateTwoNums(num1: 3, num2: 4) { $0 * $1 }
+print(numReult2)
+
+
+//声明一个存放函数的数组
+var functionArray: [() -> Void] = []
+//定义一个接收闭包参数的函数，如果定义非逃逸函数 func doSomething(@noescape paramClosure:() -> Void) 就会编译错误
+func doSomething(paramClosure: @escaping () -> Void){
+    //把参数放入数组中，用于逃逸调用
+    functionArray.append(paramClosure)
+    
+}
+
+//调用函数
+doSomething(paramClosure: {print("Hello world")})
+
+doSomething(paramClosure: {print("Hello LvesLi")})
+
+//逃逸调用闭包
+for closurePrama in functionArray {
+    print("\(closurePrama)")
+}
+
+// ****** 枚举 ******
+enum Orientation: Int{
+    
+    case UP = 4
+    case DOWN
+    case LEFT
+    case RIGHT
+}
+
+let orientation = Orientation.RIGHT
+print("\(orientation.hashValue)") //通过枚举值-->原始值
+
+let orient = Orientation(rawValue: 5) //原始值 --> 枚举值
+if let newOrient = orient {
+    print(newOrient.rawValue)
+}
+
+// ****** 泛型 ******
+class Foo<T: Equatable> {
+    
+    var field: T
+    
+    init(field:T) {
+        self.field = field
+    }
+}
+
+class TestFoo : Equatable{
+    
+    init() {
+        
+    }
+    
+    static func ==(lhs: TestFoo, rhs: TestFoo) -> Bool {
+        return true
+    }
+    
+}
+
+var testFoo = TestFoo.init()
+var foo = Foo.init(field: testFoo)
+print(foo.field)

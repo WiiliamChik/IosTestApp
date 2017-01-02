@@ -1,0 +1,9 @@
+/* 
+  Localizable.strings
+  TestApp
+
+  Created by 植伟良 on 2016/12/29.
+  Copyright © 2016年 植伟良. All rights reserved.
+*/
+
+"hello" = "你好"; //中文Strings
